@@ -154,6 +154,8 @@ trait JsonSchemas extends algebra.JsonSchemas {
     named(schema, name.replace('$','.'))
   }
 
+  case class Baz(f: Byte)
+  implicit val fooResponse: JsonSchema[Baz] = genericJsonSchema[Baz]
 
   /** @return a `JsonSchema[A]` obtained from an implicitly derived `GenericJsonSchema[A]`
     *
